@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		211A38972B6FAE920058D296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211A38962B6FAE920058D296 /* AppDelegate.swift */; };
 		211A38992B6FAE920058D296 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211A38982B6FAE920058D296 /* SceneDelegate.swift */; };
-		211A389B2B6FAE920058D296 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211A389A2B6FAE920058D296 /* ViewController.swift */; };
 		211A389E2B6FAE920058D296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 211A389C2B6FAE920058D296 /* Main.storyboard */; };
 		211A38A02B6FAE950058D296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211A389F2B6FAE950058D296 /* Assets.xcassets */; };
 		211A38A32B6FAE950058D296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 211A38A12B6FAE950058D296 /* LaunchScreen.storyboard */; };
+		211A38AE2B6FB5380058D296 /* Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211A38AD2B6FB5380058D296 /* Bug.swift */; };
+		211A38B02B6FB5B40058D296 /* BugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211A38AF2B6FB5B30058D296 /* BugViewModel.swift */; };
+		211A38B22B6FBBFB0058D296 /* BugReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211A38B12B6FBBFB0058D296 /* BugReportViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		211A38932B6FAE920058D296 /* Bug It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bug It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		211A38962B6FAE920058D296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		211A38982B6FAE920058D296 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		211A389A2B6FAE920058D296 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		211A389D2B6FAE920058D296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		211A389F2B6FAE950058D296 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		211A38A22B6FAE950058D296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		211A38A42B6FAE950058D296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		211A38AD2B6FB5380058D296 /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
+		211A38AF2B6FB5B30058D296 /* BugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugViewModel.swift; sourceTree = "<group>"; };
+		211A38B12B6FBBFB0058D296 /* BugReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugReportViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,57 @@
 		211A38952B6FAE920058D296 /* Bug It */ = {
 			isa = PBXGroup;
 			children = (
+				211A38AC2B6FB1B10058D296 /* ViewModels */,
+				211A38AB2B6FB1740058D296 /* Views */,
+				211A38AA2B6FB1540058D296 /* Models */,
 				211A38962B6FAE920058D296 /* AppDelegate.swift */,
 				211A38982B6FAE920058D296 /* SceneDelegate.swift */,
-				211A389A2B6FAE920058D296 /* ViewController.swift */,
-				211A389C2B6FAE920058D296 /* Main.storyboard */,
 				211A389F2B6FAE950058D296 /* Assets.xcassets */,
-				211A38A12B6FAE950058D296 /* LaunchScreen.storyboard */,
 				211A38A42B6FAE950058D296 /* Info.plist */,
 			);
 			path = "Bug It";
+			sourceTree = "<group>";
+		};
+		211A38AA2B6FB1540058D296 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				211A38AD2B6FB5380058D296 /* Bug.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		211A38AB2B6FB1740058D296 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				211A38B32B6FDF260058D296 /* Storyboards */,
+				211A38B42B6FDF380058D296 /* ViewControllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		211A38AC2B6FB1B10058D296 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				211A38AF2B6FB5B30058D296 /* BugViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		211A38B32B6FDF260058D296 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				211A389C2B6FAE920058D296 /* Main.storyboard */,
+				211A38A12B6FAE950058D296 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		211A38B42B6FDF380058D296 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				211A38B12B6FBBFB0058D296 /* BugReportViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				211A389B2B6FAE920058D296 /* ViewController.swift in Sources */,
+				211A38AE2B6FB5380058D296 /* Bug.swift in Sources */,
+				211A38B22B6FBBFB0058D296 /* BugReportViewController.swift in Sources */,
 				211A38972B6FAE920058D296 /* AppDelegate.swift in Sources */,
 				211A38992B6FAE920058D296 /* SceneDelegate.swift in Sources */,
+				211A38B02B6FB5B40058D296 /* BugViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +337,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bug It/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bug It";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -316,6 +365,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bug It/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bug It";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

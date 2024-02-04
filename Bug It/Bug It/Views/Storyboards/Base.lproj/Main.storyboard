@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J0N-Zr-96I">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="JW7-Lp-gCR">
+            <objects>
+                <navigationController id="J0N-Zr-96I" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rk0-G5-zkF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Qdm-OB-kH6" kind="relationship" relationship="rootViewController" id="PfM-RW-jR4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rRI-Zi-2u1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-669" y="30"/>
+        </scene>
+        <!--Bug Report View Controller-->
+        <scene sceneID="1NO-xx-lgT">
+            <objects>
+                <viewController id="Qdm-OB-kH6" customClass="BugReportViewController" customModule="Bug_It" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KCR-FE-l3Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GX0-rH-3FD">
+                                <rect key="frame" x="0.0" y="109" width="414" height="354"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="354" id="YSy-oO-BhR"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add Bug Description here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nT2-Lq-ynA">
+                                <rect key="frame" x="20" y="481" width="374" height="141"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="141" id="6U2-JJ-gSG"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oll-5d-iJo">
+                                <rect key="frame" x="136" y="656" width="142" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Submit">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="submitBugReport:" destination="Qdm-OB-kH6" eventType="touchUpInside" id="prj-O0-8iN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="heh-FZ-4aN"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="GX0-rH-3FD" firstAttribute="top" secondItem="heh-FZ-4aN" secondAttribute="top" constant="21" id="3nO-tD-iQu"/>
+                            <constraint firstItem="nT2-Lq-ynA" firstAttribute="top" secondItem="GX0-rH-3FD" secondAttribute="bottom" constant="18" id="NTA-Eo-M3G"/>
+                            <constraint firstItem="heh-FZ-4aN" firstAttribute="trailing" secondItem="GX0-rH-3FD" secondAttribute="trailing" id="ao4-E6-qlI"/>
+                            <constraint firstItem="GX0-rH-3FD" firstAttribute="leading" secondItem="heh-FZ-4aN" secondAttribute="leading" id="bKn-kY-xVD"/>
+                            <constraint firstItem="nT2-Lq-ynA" firstAttribute="leading" secondItem="heh-FZ-4aN" secondAttribute="leading" constant="20" id="e8W-xW-26O"/>
+                            <constraint firstItem="heh-FZ-4aN" firstAttribute="trailing" secondItem="nT2-Lq-ynA" secondAttribute="trailing" constant="20" id="yDw-i1-hsW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yOC-5e-7ce"/>
+                    <connections>
+                        <outlet property="bugDescriptionTextView" destination="nT2-Lq-ynA" id="lb0-EJ-N1i"/>
+                        <outlet property="bugImageView" destination="GX0-rH-3FD" id="rNt-Uf-Zkz"/>
+                        <outlet property="submitButton" destination="oll-5d-iJo" id="Syi-d1-iTq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VOd-qT-3G8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60.869565217391312" y="28.794642857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
