@@ -11,11 +11,22 @@ import UIKit
 class BugViewModel {
     var bugImage: UIImage?
     var bugDescription: String?
-
+    
+    private let googleSheetsUploader: GoogleSheetsUploader
+    
+    init(googleSheetsUploader: GoogleSheetsUploader = GoogleSheetsUploader.shared) {
+        self.googleSheetsUploader = googleSheetsUploader
+    }
+    
     func uploadBugData(completion: @escaping (Bool) -> Void) {
-        // Implement data upload logic here (Google Sheets, Notion, etc.)
-        // Call completion handler with success status
-        completion(true)
+        
+        
+        let bug = Bug(timestamp: Date(), screenshot: bugImage, description: bugDescription ?? "", imageURL: URL(string: "https://example.com/path/to/image.jpg"))
+        
+        googleSheetsUploader.uploadBugData(bug: bug) { success in
+            completion(success)
+        }
     }
 }
+
 

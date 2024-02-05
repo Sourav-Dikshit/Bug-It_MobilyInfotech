@@ -18,41 +18,40 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Qdm-OB-kH6" kind="relationship" relationship="rootViewController" id="PfM-RW-jR4"/>
+                        <segue destination="p1k-IC-Kto" kind="relationship" relationship="rootViewController" id="1y0-c2-M6D"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRI-Zi-2u1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-669" y="30"/>
+            <point key="canvasLocation" x="-1388" y="-7"/>
         </scene>
         <!--Bug Report View Controller-->
         <scene sceneID="1NO-xx-lgT">
             <objects>
-                <viewController id="Qdm-OB-kH6" customClass="BugReportViewController" customModule="Bug_It" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BugReportVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qdm-OB-kH6" customClass="BugReportViewController" customModule="Bug_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KCR-FE-l3Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GX0-rH-3FD">
-                                <rect key="frame" x="0.0" y="109" width="414" height="354"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="65" width="414" height="354"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="354" id="YSy-oO-BhR"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add Bug Description here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nT2-Lq-ynA">
-                                <rect key="frame" x="20" y="481" width="374" height="141"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <rect key="frame" x="20" y="437" width="374" height="141"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="141" id="6U2-JJ-gSG"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oll-5d-iJo">
-                                <rect key="frame" x="136" y="656" width="142" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oll-5d-iJo">
+                                <rect key="frame" x="136" y="623" width="142" height="65"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Submit">
@@ -64,13 +63,15 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="heh-FZ-4aN"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GX0-rH-3FD" firstAttribute="top" secondItem="heh-FZ-4aN" secondAttribute="top" constant="21" id="3nO-tD-iQu"/>
+                            <constraint firstItem="oll-5d-iJo" firstAttribute="top" secondItem="nT2-Lq-ynA" secondAttribute="bottom" constant="45" id="8nQ-0A-6LY"/>
                             <constraint firstItem="nT2-Lq-ynA" firstAttribute="top" secondItem="GX0-rH-3FD" secondAttribute="bottom" constant="18" id="NTA-Eo-M3G"/>
                             <constraint firstItem="heh-FZ-4aN" firstAttribute="trailing" secondItem="GX0-rH-3FD" secondAttribute="trailing" id="ao4-E6-qlI"/>
                             <constraint firstItem="GX0-rH-3FD" firstAttribute="leading" secondItem="heh-FZ-4aN" secondAttribute="leading" id="bKn-kY-xVD"/>
                             <constraint firstItem="nT2-Lq-ynA" firstAttribute="leading" secondItem="heh-FZ-4aN" secondAttribute="leading" constant="20" id="e8W-xW-26O"/>
+                            <constraint firstItem="oll-5d-iJo" firstAttribute="centerX" secondItem="heh-FZ-4aN" secondAttribute="centerX" id="l6E-9r-6ff"/>
                             <constraint firstItem="heh-FZ-4aN" firstAttribute="trailing" secondItem="nT2-Lq-ynA" secondAttribute="trailing" constant="20" id="yDw-i1-hsW"/>
                         </constraints>
                     </view>
@@ -83,15 +84,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOd-qT-3G8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60.869565217391312" y="28.794642857142854"/>
+            <point key="canvasLocation" x="144.92753623188406" y="-7.3660714285714279"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Eh6-AU-xAb">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="p1k-IC-Kto" customClass="LoginViewController" customModule="Bug_It" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vtO-lF-EAc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYo-pg-RYW">
+                                <rect key="frame" x="55" y="542" width="321" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="Odf-Hl-5Vn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SignIn"/>
+                                <connections>
+                                    <action selector="signIn:" destination="p1k-IC-Kto" eventType="touchUpInside" id="bPL-aO-DEa"/>
+                                    <action selector="signOut:" destination="p1k-IC-Kto" eventType="touchUpInside" id="cNf-2w-fXd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iud-pX-2kO">
+                                <rect key="frame" x="55" y="648" width="321" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="o5S-68-kou"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SignOut"/>
+                                <connections>
+                                    <action selector="signOut:" destination="p1k-IC-Kto" eventType="touchUpInside" id="MTL-gV-lc2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4b0-ko-jsV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4b0-ko-jsV" firstAttribute="trailing" secondItem="vYo-pg-RYW" secondAttribute="trailing" constant="38" id="IJF-Qc-5wt"/>
+                            <constraint firstItem="iud-pX-2kO" firstAttribute="leading" secondItem="4b0-ko-jsV" secondAttribute="leading" constant="55" id="e0c-WD-1a9"/>
+                            <constraint firstItem="vYo-pg-RYW" firstAttribute="leading" secondItem="4b0-ko-jsV" secondAttribute="leading" constant="55" id="tvF-Rd-4gp"/>
+                            <constraint firstItem="vYo-pg-RYW" firstAttribute="top" secondItem="4b0-ko-jsV" secondAttribute="top" constant="454" id="wqr-7s-oRp"/>
+                            <constraint firstItem="4b0-ko-jsV" firstAttribute="trailing" secondItem="iud-pX-2kO" secondAttribute="trailing" constant="38" id="z24-0A-edw"/>
+                            <constraint firstItem="iud-pX-2kO" firstAttribute="top" secondItem="vYo-pg-RYW" secondAttribute="bottom" constant="33" id="zWj-sg-Soj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QmZ-DV-9ZP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7J-y3-hBu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-697.10144927536237" y="-7.3660714285714279"/>
         </scene>
     </scenes>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

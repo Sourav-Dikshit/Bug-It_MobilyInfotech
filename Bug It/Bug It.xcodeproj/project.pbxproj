@@ -15,6 +15,9 @@
 		211A38AE2B6FB5380058D296 /* Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211A38AD2B6FB5380058D296 /* Bug.swift */; };
 		211A38B02B6FB5B40058D296 /* BugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211A38AF2B6FB5B30058D296 /* BugViewModel.swift */; };
 		211A38B22B6FBBFB0058D296 /* BugReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211A38B12B6FBBFB0058D296 /* BugReportViewController.swift */; };
+		211A38C02B70BDAC0058D296 /* GoogleSheetsUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211A38BF2B70BDAC0058D296 /* GoogleSheetsUploader.swift */; };
+		21B6E6CB2B710D0C005A3685 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B6E6CA2B710D0C005A3685 /* LoginViewController.swift */; };
+		B1A438B4BC83887E67C5FAB9 /* Pods_Bug_It.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6356337DA973FDE77718C80 /* Pods_Bug_It.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,11 @@
 		211A38AD2B6FB5380058D296 /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
 		211A38AF2B6FB5B30058D296 /* BugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugViewModel.swift; sourceTree = "<group>"; };
 		211A38B12B6FBBFB0058D296 /* BugReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugReportViewController.swift; sourceTree = "<group>"; };
+		211A38BF2B70BDAC0058D296 /* GoogleSheetsUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSheetsUploader.swift; sourceTree = "<group>"; };
+		21B6E6CA2B710D0C005A3685 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		260E8DAB2821D194A9383296 /* Pods-Bug It.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bug It.debug.xcconfig"; path = "Target Support Files/Pods-Bug It/Pods-Bug It.debug.xcconfig"; sourceTree = "<group>"; };
+		2E14E57BD9944DE9BE15E0C6 /* Pods-Bug It.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bug It.release.xcconfig"; path = "Target Support Files/Pods-Bug It/Pods-Bug It.release.xcconfig"; sourceTree = "<group>"; };
+		A6356337DA973FDE77718C80 /* Pods_Bug_It.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bug_It.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1A438B4BC83887E67C5FAB9 /* Pods_Bug_It.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +55,8 @@
 			children = (
 				211A38952B6FAE920058D296 /* Bug It */,
 				211A38942B6FAE920058D296 /* Products */,
+				D8AF7F289E2083CDBB2325DD /* Pods */,
+				5A4CC5B54E1AA6E4426E5439 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +71,7 @@
 		211A38952B6FAE920058D296 /* Bug It */ = {
 			isa = PBXGroup;
 			children = (
+				211A38BE2B70BD920058D296 /* Networking */,
 				211A38AC2B6FB1B10058D296 /* ViewModels */,
 				211A38AB2B6FB1740058D296 /* Views */,
 				211A38AA2B6FB1540058D296 /* Models */,
@@ -109,8 +121,34 @@
 			isa = PBXGroup;
 			children = (
 				211A38B12B6FBBFB0058D296 /* BugReportViewController.swift */,
+				21B6E6CA2B710D0C005A3685 /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		211A38BE2B70BD920058D296 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				211A38BF2B70BDAC0058D296 /* GoogleSheetsUploader.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5A4CC5B54E1AA6E4426E5439 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6356337DA973FDE77718C80 /* Pods_Bug_It.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8AF7F289E2083CDBB2325DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				260E8DAB2821D194A9383296 /* Pods-Bug It.debug.xcconfig */,
+				2E14E57BD9944DE9BE15E0C6 /* Pods-Bug It.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,9 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 211A38A72B6FAE950058D296 /* Build configuration list for PBXNativeTarget "Bug It" */;
 			buildPhases = (
+				123DB676622875CB4D365E16 /* [CP] Check Pods Manifest.lock */,
 				211A388F2B6FAE920058D296 /* Sources */,
 				211A38902B6FAE920058D296 /* Frameworks */,
 				211A38912B6FAE920058D296 /* Resources */,
+				1199EDED8D24006F11639BCD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,15 +219,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1199EDED8D24006F11639BCD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bug It/Pods-Bug It-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bug It/Pods-Bug It-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bug It/Pods-Bug It-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		123DB676622875CB4D365E16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bug It-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		211A388F2B6FAE920058D296 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B6E6CB2B710D0C005A3685 /* LoginViewController.swift in Sources */,
 				211A38AE2B6FB5380058D296 /* Bug.swift in Sources */,
 				211A38B22B6FBBFB0058D296 /* BugReportViewController.swift in Sources */,
 				211A38972B6FAE920058D296 /* AppDelegate.swift in Sources */,
 				211A38992B6FAE920058D296 /* SceneDelegate.swift in Sources */,
+				211A38C02B70BDAC0058D296 /* GoogleSheetsUploader.swift in Sources */,
 				211A38B02B6FB5B40058D296 /* BugViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +414,7 @@
 		};
 		211A38A82B6FAE950058D296 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 260E8DAB2821D194A9383296 /* Pods-Bug It.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -358,6 +443,7 @@
 		};
 		211A38A92B6FAE950058D296 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E14E57BD9944DE9BE15E0C6 /* Pods-Bug It.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

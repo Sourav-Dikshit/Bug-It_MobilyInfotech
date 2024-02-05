@@ -17,23 +17,23 @@ class BugReportViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.\
         setupUI()
+        
+        hideAllViews()
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
+    // MARK: - UISetup
     func setupUI() {
         title = "Let's Report The Bug"
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         navigationItem.rightBarButtonItem = addButton
         
-        // Initially hide all views
-        hideAllViews()
+        
     }
+    
+    
     
     func hideAllViews() {
         bugImageView.isHidden = true
@@ -47,32 +47,30 @@ class BugReportViewController: UIViewController, UIImagePickerControllerDelegate
         submitButton.isHidden = false
     }
     
+    // MARK: - Actions
+    
     @objc func addButtonTapped() {
         // Display an action sheet with options
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        // Option 1: From Gallery
         let fromGalleryAction = UIAlertAction(title: "From Gallery", style: .default) { [weak self] _ in
             self?.openGalleryClicked()
         }
         actionSheet.addAction(fromGalleryAction)
         
-        // Option 2: Take Screenshot
         let takeScreenshotAction = UIAlertAction(title: "Take Screenshot", style: .default) { [weak self] _ in
             self?.captureScreenshotClicked()
         }
         actionSheet.addAction(takeScreenshotAction)
         
-        // Option 3: Cancel
+     
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         actionSheet.addAction(cancelAction)
         
-        // Present the action sheet
         present(actionSheet, animated: true, completion: nil)
     }
     
     func openGalleryClicked() {
-        // Implement logic to open the gallery for image selection
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
@@ -81,7 +79,6 @@ class BugReportViewController: UIViewController, UIImagePickerControllerDelegate
     
     func captureScreenshotClicked() {
         if let screenshot = captureScreenshot() {
-            // Assign the screenshot to the image view
             bugImageView.image = screenshot
             bugViewModel.bugImage = screenshot
             
@@ -89,20 +86,6 @@ class BugReportViewController: UIViewController, UIImagePickerControllerDelegate
             
         }
     }
-    
-    func captureScreenshot() -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0.0)
-        defer { UIGraphicsEndImageContext() }
-        
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
-        
-        view.layer.render(in: context)
-        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
-        
-        return screenshot
-    }
-    
-    
     
     @IBAction func submitBugReport(_ sender: Any) {
         bugViewModel.bugDescription = bugDescriptionTextView.text
@@ -127,16 +110,32 @@ class BugReportViewController: UIViewController, UIImagePickerControllerDelegate
         }
     }
     
+    // MARK: - Helper
+    
+    func captureScreenshot() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0.0)
+        defer { UIGraphicsEndImageContext() }
+        
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        
+        view.layer.render(in: context)
+        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+        
+        return screenshot
+    }
     
     
     // MARK: - UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage {
+            
+            showAllViews()
+            
             bugViewModel.bugImage = selectedImage
             bugImageView.image = selectedImage
             
-            showAllViews()
+            
         }
         
         picker.dismiss(animated: true, completion: nil)
