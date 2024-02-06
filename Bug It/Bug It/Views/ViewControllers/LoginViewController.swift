@@ -16,12 +16,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func signIn(_ sender: Any) {
         
-        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
-          guard error == nil else { return }
-
-          // If sign in succeeded, display the app's main content View.
-        }
-        
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { _ , error in
             if let error = error {
                 // Handle error if sign-in fails
