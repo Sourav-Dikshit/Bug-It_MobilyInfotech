@@ -50,9 +50,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oll-5d-iJo">
-                                <rect key="frame" x="136" y="623" width="142" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oll-5d-iJo">
+                                <rect key="frame" x="20" y="623" width="374" height="63"/>
                                 <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="PHZ-vf-MaX"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Submit">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -63,15 +66,16 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="heh-FZ-4aN"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="GX0-rH-3FD" firstAttribute="top" secondItem="heh-FZ-4aN" secondAttribute="top" constant="21" id="3nO-tD-iQu"/>
-                            <constraint firstItem="oll-5d-iJo" firstAttribute="top" secondItem="nT2-Lq-ynA" secondAttribute="bottom" constant="45" id="8nQ-0A-6LY"/>
                             <constraint firstItem="nT2-Lq-ynA" firstAttribute="top" secondItem="GX0-rH-3FD" secondAttribute="bottom" constant="18" id="NTA-Eo-M3G"/>
+                            <constraint firstItem="heh-FZ-4aN" firstAttribute="trailing" secondItem="oll-5d-iJo" secondAttribute="trailing" constant="20" id="Ssx-GG-1xc"/>
+                            <constraint firstItem="oll-5d-iJo" firstAttribute="leading" secondItem="heh-FZ-4aN" secondAttribute="leading" constant="20" id="ZCW-Rh-Hvc"/>
                             <constraint firstItem="heh-FZ-4aN" firstAttribute="trailing" secondItem="GX0-rH-3FD" secondAttribute="trailing" id="ao4-E6-qlI"/>
                             <constraint firstItem="GX0-rH-3FD" firstAttribute="leading" secondItem="heh-FZ-4aN" secondAttribute="leading" id="bKn-kY-xVD"/>
                             <constraint firstItem="nT2-Lq-ynA" firstAttribute="leading" secondItem="heh-FZ-4aN" secondAttribute="leading" constant="20" id="e8W-xW-26O"/>
-                            <constraint firstItem="oll-5d-iJo" firstAttribute="centerX" secondItem="heh-FZ-4aN" secondAttribute="centerX" id="l6E-9r-6ff"/>
+                            <constraint firstItem="oll-5d-iJo" firstAttribute="top" secondItem="nT2-Lq-ynA" secondAttribute="bottom" constant="45" id="jEs-9Q-t6B"/>
                             <constraint firstItem="heh-FZ-4aN" firstAttribute="trailing" secondItem="nT2-Lq-ynA" secondAttribute="trailing" constant="20" id="yDw-i1-hsW"/>
                         </constraints>
                     </view>
@@ -94,39 +98,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYo-pg-RYW">
-                                <rect key="frame" x="55" y="542" width="321" height="73"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iud-pX-2kO">
+                                <rect key="frame" x="20" y="648" width="374" height="74"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="73" id="Odf-Hl-5Vn"/>
+                                    <constraint firstAttribute="height" constant="74" id="WrV-h7-Grb"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="SignIn"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SignOut">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="signIn:" destination="p1k-IC-Kto" eventType="touchUpInside" id="bPL-aO-DEa"/>
-                                    <action selector="signOut:" destination="p1k-IC-Kto" eventType="touchUpInside" id="cNf-2w-fXd"/>
+                                    <action selector="signOut:" destination="p1k-IC-Kto" eventType="touchUpInside" id="1Ym-m7-0LQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iud-pX-2kO">
-                                <rect key="frame" x="55" y="648" width="321" height="74"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYo-pg-RYW">
+                                <rect key="frame" x="20" y="542" width="374" height="73"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="o5S-68-kou"/>
+                                    <constraint firstAttribute="height" constant="73" id="n56-Cb-Dgb"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="SignOut"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SignIn">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="signOut:" destination="p1k-IC-Kto" eventType="touchUpInside" id="MTL-gV-lc2"/>
+                                    <action selector="signIn:" destination="p1k-IC-Kto" eventType="touchUpInside" id="R1v-gR-OVb"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4b0-ko-jsV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
-                            <constraint firstItem="4b0-ko-jsV" firstAttribute="trailing" secondItem="vYo-pg-RYW" secondAttribute="trailing" constant="38" id="IJF-Qc-5wt"/>
-                            <constraint firstItem="iud-pX-2kO" firstAttribute="leading" secondItem="4b0-ko-jsV" secondAttribute="leading" constant="55" id="e0c-WD-1a9"/>
-                            <constraint firstItem="vYo-pg-RYW" firstAttribute="leading" secondItem="4b0-ko-jsV" secondAttribute="leading" constant="55" id="tvF-Rd-4gp"/>
-                            <constraint firstItem="vYo-pg-RYW" firstAttribute="top" secondItem="4b0-ko-jsV" secondAttribute="top" constant="454" id="wqr-7s-oRp"/>
-                            <constraint firstItem="4b0-ko-jsV" firstAttribute="trailing" secondItem="iud-pX-2kO" secondAttribute="trailing" constant="38" id="z24-0A-edw"/>
-                            <constraint firstItem="iud-pX-2kO" firstAttribute="top" secondItem="vYo-pg-RYW" secondAttribute="bottom" constant="33" id="zWj-sg-Soj"/>
+                            <constraint firstItem="vYo-pg-RYW" firstAttribute="centerX" secondItem="4b0-ko-jsV" secondAttribute="centerX" id="Ki3-bw-KmX"/>
+                            <constraint firstItem="vYo-pg-RYW" firstAttribute="top" secondItem="4b0-ko-jsV" secondAttribute="top" constant="454" id="NJm-V4-yVF"/>
+                            <constraint firstItem="iud-pX-2kO" firstAttribute="leading" secondItem="4b0-ko-jsV" secondAttribute="leading" constant="20" id="VUL-Hw-JB7"/>
+                            <constraint firstItem="4b0-ko-jsV" firstAttribute="trailing" secondItem="iud-pX-2kO" secondAttribute="trailing" constant="20" id="h9n-9D-ONp"/>
+                            <constraint firstItem="iud-pX-2kO" firstAttribute="top" secondItem="vYo-pg-RYW" secondAttribute="bottom" constant="33" id="mCc-gk-vSX"/>
+                            <constraint firstItem="vYo-pg-RYW" firstAttribute="leading" secondItem="4b0-ko-jsV" secondAttribute="leading" constant="20" id="myD-CC-JRw"/>
+                            <constraint firstItem="4b0-ko-jsV" firstAttribute="trailing" secondItem="vYo-pg-RYW" secondAttribute="trailing" constant="20" id="wtW-wP-mua"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QmZ-DV-9ZP"/>
@@ -140,8 +150,8 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -12,7 +12,6 @@ class GoogleSheetsUploader {
     
     func uploadBugData(bug: Bug, completion: @escaping (Bool) -> Void) {
         let spreadsheetId = "1zuypJh7J3mEvjqMxnkAh3Rm3q-hRl5SNd8plc_1t5EE"
-        let sheetName = bug.sheetTabName
         
         let values: [[Any]] = [
             [bug.timestamp.description, bug.description,  bug.imageURL?.absoluteString ?? ""]
@@ -27,9 +26,6 @@ class GoogleSheetsUploader {
         guard let currentUser = GIDSignIn.sharedInstance.currentUser else {
             return
         }
-        
-        
-        print(currentUser.grantedScopes)
         
         currentUser.refreshTokensIfNeeded { user, error in
             guard error == nil else { return }

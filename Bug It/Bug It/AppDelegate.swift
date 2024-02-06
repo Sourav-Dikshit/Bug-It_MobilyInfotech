@@ -15,27 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        
         window = UIWindow(frame: UIScreen.main.bounds)
-          let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
-          window?.rootViewController = loginVC
-          window?.makeKeyAndVisible()
+        let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
+        window?.rootViewController = loginVC
+        window?.makeKeyAndVisible()
         
-//        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
-//            if error != nil || user == nil {
-//
-//
-//                let loginViewController = LoginViewController()
-//
-//
-//                self.window = UIWindow(frame: UIScreen.main.bounds)
-//                self.window?.rootViewController = loginViewController
-//                self.window?.makeKeyAndVisible()
-//
-//            } else {
-//                // Show BugReport Screen
-//            }
-//        }
         return true
     }
     

@@ -8,6 +8,7 @@
 import UIKit
 
 class BugReportViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
     @IBOutlet var bugImageView: UIImageView!
     @IBOutlet var bugDescriptionTextView: UITextView!
     @IBOutlet var submitButton: UIButton!
@@ -20,20 +21,16 @@ class BugReportViewController: UIViewController, UIImagePickerControllerDelegate
         setupUI()
         
         hideAllViews()
-        
     }
     
     // MARK: - UISetup
+    
     func setupUI() {
         title = "Let's Report The Bug"
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         navigationItem.rightBarButtonItem = addButton
-        
-        
     }
-    
-    
     
     func hideAllViews() {
         bugImageView.isHidden = true
@@ -63,7 +60,7 @@ class BugReportViewController: UIViewController, UIImagePickerControllerDelegate
         }
         actionSheet.addAction(takeScreenshotAction)
         
-     
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         actionSheet.addAction(cancelAction)
         
@@ -134,8 +131,6 @@ class BugReportViewController: UIViewController, UIImagePickerControllerDelegate
             
             bugViewModel.bugImage = selectedImage
             bugImageView.image = selectedImage
-            
-            
         }
         
         picker.dismiss(animated: true, completion: nil)
