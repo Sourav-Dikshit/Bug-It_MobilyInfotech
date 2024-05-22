@@ -10,7 +10,7 @@ import UIKit
 
 class BugViewModel {
     
-    //changing
+    
     var bugImage: UIImage?
     var bugDescription: String?
     
