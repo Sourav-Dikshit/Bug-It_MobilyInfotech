@@ -10,6 +10,8 @@ import UIKit
 
 class BugViewModel {
     
+    // Git Demo
+    // Changing for feature 1 branch
     
     var bugImage: UIImage?
     var bugDescription: String?
